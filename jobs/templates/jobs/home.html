@@ -9,9 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fontawesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fa-brands.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fa-solid.css' %}">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'script.js'%}"></script>
 </head>
     <body>
 
@@ -34,8 +35,8 @@
                 <h1 class="display">N.HDZ</h1>
                 <p class="lead">Hi! I'm Neftalí Hernández and I'm a Full-Stack Web Developer</p>
                 <p>From design to launch, let me help you make your web project a reality</p>
-                <a class="btn btn-outline-light btn-lg" href="#" role="button"> <i class="fas fa-caret-down"></i> Read some more</a>
-                <a class="btn btn-outline-light btn-lg" href="#" role="button"> <i class="fas fa-envelope"></i> Lets talk</a>
+                <a class="btn btn-outline-light btn-lg scroller" role="button" data-section="bio-container"> <i class="fas fa-caret-down"></i> Read some more</a>
+                <a class="btn btn-outline-light btn-lg" role="button"> <i class="fas fa-envelope"></i> Lets talk</a>
             </div>
         </div>
 
@@ -209,16 +210,16 @@
                     <div class="sticky-top">
                         <ul class="nav flex-column" id="sub-listing">
                           <li class="nav-item">
-                            <a class="nav-link" href="#">About me</a>
+                            <a class="nav-link btn scroller text-left" role="button" data-section="bio-container">About me</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Timeline</a>
+                            <a class="nav-link btn scroller text-left" role="button" data-section="time-line-container">Timeline</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Skills</a>
+                            <a class="nav-link btn scroller text-left" role="button" data-section="skills-container">Skills</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Past work</a>
+                            <a class="nav-link btn scroller text-left" role="button" data-section="jobs-container">Past work</a>
                           </li>
                         </ul>
                     </div>
