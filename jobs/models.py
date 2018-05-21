@@ -8,6 +8,8 @@ class Job(models.Model):
     image = models.ImageField(verbose_name='thumbnail', upload_to='img/jobs')
     # Job description
     summary = models.CharField(verbose_name='description', max_length=140)
+    # Job copy text
+    copy = models.TextField(verbose_name='copy', null=True)
     # Date of Job
     date = models.DateTimeField(verbose_name='date of job', null=True)
     # Link to

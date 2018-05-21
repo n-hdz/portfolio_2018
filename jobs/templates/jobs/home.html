@@ -1,257 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% load static %}
-    <title>{% block title %} N.HDZ - Portfolio {% endblock title %}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fa-brands.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fa-solid.css' %}">
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{% static 'script.js'%}"></script>
-</head>
-    <body>
+{% extends 'jobs/base.html' %}
+{% block content %}
+<nav>
+    <ul class="nav float-left" id="nav-bar">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+    </ul>
+</nav>
 
-        <nav>
-            <ul class="nav float-left" id="nav-bar">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-        </nav>
+<div class="jumbotron" id="banner">
+    <div class="container-fluid">
+        <h1 class="display">N.HDZ</h1>
+        <p class="lead">Hi! I'm Neftalí Hernández and I'm a Full-Stack Web Developer</p>
+        <p>From design to launch, let me help you make your web project a reality</p>
+        <a class="btn btn-outline-light btn-lg scroller" role="button" data-section="bio-container"> <i class="fas fa-caret-down"></i> Read some more</a>
+        <a class="btn btn-outline-light btn-lg" role="button"> <i class="fas fa-envelope"></i> Lets talk</a>
+    </div>
+</div>
 
-        <div class="jumbotron" id="banner">
-            <div class="container-fluid">
-                <h1 class="display">N.HDZ</h1>
-                <p class="lead">Hi! I'm Neftalí Hernández and I'm a Full-Stack Web Developer</p>
-                <p>From design to launch, let me help you make your web project a reality</p>
-                <a class="btn btn-outline-light btn-lg scroller" role="button" data-section="bio-container"> <i class="fas fa-caret-down"></i> Read some more</a>
-                <a class="btn btn-outline-light btn-lg" role="button"> <i class="fas fa-envelope"></i> Lets talk</a>
+<div class="main container">
+    <div class="row">
+        <div class="col-10" id="main-content">
+            <div class="container" id="bio-container">
+                <h2 class="display">About me</h2>
+                <hr>
+                <div id="bio">
+                    <p>
+                        I'm a mexican Full-Stack Developer Developer with two years experience. I have a BFA in Graphic Design
+                        with a focus on Typography and Editorial Design and I'm currently pursuing a technical degree in
+                        Software Engineering and plan on continuing my education with a Masters in Design Thinking.
+                    </p>
+                    <p>
+                        A shift in my professional activity from Editorial design to Web Development, starting off as a UI/UX
+                        designer, got me gradually more involved in programming, ultimately falling in love with the
+                        Django Framework for web app development.
+                    </p>
+                    <p>
+                        Hired full-time for the past two years, I was offered in-house training as a Full-Stack Developer and
+                        support for continuing my education as a Software Engineer in hopes of hybridizing my Designing career with
+                        an IT approach.
+                    </p>
+                    <p>
+                        I'm passionate about Information Technologies and Design, Semiotics and Data Science.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div class="main container">
-            <div class="row">
-                <div class="col-10" id="main-content">
-                    <div class="container" id="bio-container">
-                        <h2 class="display">About me</h2>
-                        <hr>
-                        <div id="bio">
-                            <p>
-                                I'm a mexican Full-Stack Developer Developer with two years experience. I have a BFA in Graphic Design
-                                with a focus on Typography and Editorial Design and I'm currently pursuing a technical degree in
-                                Software Engineering and plan on continuing my education with a Masters in Design Thinking.
-                            </p>
-                            <p>
-                                A shift in my professional activity from Editorial design to Web Development, starting off as a UI/UX
-                                designer, got me gradually more involved in programming, ultimately falling in love with the
-                                Django Framework for web app development.
-                            </p>
-                            <p>
-                                Hired full-time for the past two years, I was offered in-house training as a Full-Stack Developer and
-                                support for continuing my education as a Software Engineer in hopes of hybridizing my Designing career with
-                                an IT approach.
-                            </p>
-                            <p>
-                                I'm passionate about Information Technologies and Design, Semiotics and Data Science.
-                            </p>
-                        </div>
+            <div class="container" id="time-line-container">
+                <h2 class="display">Timeline</h2>
+                <hr>
+                <div class="row" id="time-line">
+                    <div class="col-sm">
+                        <h4 class="display">2018</h4>
+                        <p>Hired at McCann Worldgroup</p>
+                        <p><small>Art Director: Chevrolet site framework migration AQR</small></p>
                     </div>
 
-                    <div class="container" id="time-line-container">
-                        <h2 class="display">Timeline</h2>
-                        <hr>
-                        <div class="row" id="time-line">
-                            <div class="col-sm">
-                                <h4 class="display">2018</h4>
-                                <p>Hired at McCann Worldgroup</p>
-                                <p><small>Art Director: Chevrolet site framework migration AQR</small></p>
-                            </div>
-
-                            <div class="col-sm">
-                                <h4 class="display">2017</h4>
-                                <p>Hired at Milenio3Genera</p>
-                                <p><small>Front-End Developer: Corporate Relations website development</small></p>
-                                <p>Enrolled A.S. in Software Engineering - Universidad Iberoamericana</p>
-                            </div>
-
-                            <div class="col-sm">
-                                <h4 class="display">2016</h4>
-                                <p>Hired at DGTIC UNAM</p>
-                                <p><small>Front-End Developer: College Science Diffusion and investigation blog management</small></p>
-                                <p>Graduated B.F.A in Graphic Design - Universidad Anahuac MxNorte</p>
-                            </div>
-                        </div>
+                    <div class="col-sm">
+                        <h4 class="display">2017</h4>
+                        <p>Hired at Milenio3Genera</p>
+                        <p><small>Front-End Developer: Corporate Relations website development</small></p>
+                        <p>Enrolled A.S. in Software Engineering - Universidad Iberoamericana</p>
                     </div>
 
-                    <div class="container" id="skills-container">
-                        <h2 class="display">Skills</h2>
-                        <hr>
-                        <div class="row" id="skills">
-                            <div class="col-sm">
-                                <h4 class="display"> <i class="fas fa-ruler-combined"></i> UI/UX</h4>
-                                <ul class="list-group">
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Adobe CC</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Editorial Design</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Material Design</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm">
-                                <h4 class="display"> <i class="fas fa-code"></i> Front-End</h4>
-                                <ul class="list-group">
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">HTML5/CSS3/Js</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Bootstrap/JQuery</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Angular/SASS</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm">
-                                <h4 class="display"> <i class="fas fa-database"></i> Back-End</h4>
-                                <ul class="list-group">
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Ruby</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">C/C++</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Java</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Django/Python</span><br>
-                                        <span class="badge badge-info">Beginner</span>
-
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">postgreSQL/SQLite</span><br>
-                                        <span class="badge badge-info">Beginner</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm">
-                                <h4 class="display"> <i class="fas fa-code-branch"></i> Development</h4>
-                                <ul class="list-group">
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">GIT</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">Windows/LINUX/iOS</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">English proficiency</span><br>
-                                        <span class="badge badge-info">Advanced</span>
-                                    </li>
-                                    <li list-group-item d-flex justify-content-between align-items-center>
-                                        <span class="skill">SCRUM</span><br>
-                                        <span class="badge badge-info">Intermediate</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container" id="jobs-container">
-                        <h2 class="display">Past work</h2>
-                        <hr>
-                        <div class="row" id="jobs">
-                            {% for job in jobs.all %}
-                                <div class="col-md-4 job-col">
-                                    <div class="card job">
-                                        <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
-                                          <div class="card-body">
-                                            <h5 class="card-title">{{ job.title }}</h5>
-                                              <p>{{ job.date|date:"M Y" }}</p>
-                                            <p class="card-text">{{ job.summary }}</p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                          </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
+                    <div class="col-sm">
+                        <h4 class="display">2016</h4>
+                        <p>Hired at DGTIC UNAM</p>
+                        <p><small>Front-End Developer: College Science Diffusion and investigation blog management</small></p>
+                        <p>Graduated B.F.A in Graphic Design - Universidad Anahuac MxNorte</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col" id="submenu">
-                    <div class="sticky-top">
-                        <ul class="nav flex-column" id="sub-listing">
-                          <li class="nav-item">
-                            <a class="nav-link btn scroller text-left" role="button" data-section="bio-container">About me</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn scroller text-left" role="button" data-section="time-line-container">Timeline</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn scroller text-left" role="button" data-section="skills-container">Skills</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn scroller text-left" role="button" data-section="jobs-container">Past work</a>
-                          </li>
+            <div class="container" id="skills-container">
+                <h2 class="display">Skills</h2>
+                <hr>
+                <div class="row" id="skills">
+                    <div class="col-sm">
+                        <h4 class="display"> <i class="fas fa-ruler-combined"></i> UI/UX</h4>
+                        <ul class="list-group">
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Adobe CC</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Editorial Design</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Material Design</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h4 class="display"> <i class="fas fa-code"></i> Front-End</h4>
+                        <ul class="list-group">
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">HTML5/CSS3/Js</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Bootstrap/JQuery</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Angular/SASS</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h4 class="display"> <i class="fas fa-database"></i> Back-End</h4>
+                        <ul class="list-group">
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Ruby</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">C/C++</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Java</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Django/Python</span><br>
+                                <span class="badge badge-info">Beginner</span>
+
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">postgreSQL/SQLite</span><br>
+                                <span class="badge badge-info">Beginner</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h4 class="display"> <i class="fas fa-code-branch"></i> Development</h4>
+                        <ul class="list-group">
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">GIT</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">Windows/LINUX/iOS</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">English proficiency</span><br>
+                                <span class="badge badge-info">Advanced</span>
+                            </li>
+                            <li list-group-item d-flex justify-content-between align-items-center>
+                                <span class="skill">SCRUM</span><br>
+                                <span class="badge badge-info">Intermediate</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    <footer>
-        <div class="container">
-            <div class="row" id="footer-cont">
-                <div class="col-sm-10">
-                    <div class="d-flex justify-content-between" id="contact-bar">
-                        <span class="fab fa-linkedin footer-contact"></span>
-                        <span class="fab fa-github footer-contact"></span>
-                        <span class="fab fa-twitter"></span>
-                    </div>
-                    <p><small><i class="fas fa-code"></i> by N.HDZ - 2018</small></p>
-                </div>
-                <div class="col-sm-2">
-                    <ul class="nav" id="site-map">
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                      </li>
-                    </ul>
+
+            <div class="container" id="jobs-container">
+                <h2 class="display">Past work</h2>
+                <hr>
+                <div class="row" id="jobs">
+                    {% for job in jobs.all %}
+                        <div class="col-md-4 job-col">
+                            <div class="card job">
+                                <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{ job.title }}</h5>
+                                      <p>{{ job.date|date:"M Y" }}</p>
+                                    <p class="card-text">{{ job.summary }}</p>
+                                    <a href="{% url 'job_detail' job.id %}" class="btn btn-info">Read more</a>
+                                  </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </footer>
-    </body>
-</html>
+
+        <div class="col" id="submenu">
+            <div class="sticky-top">
+                <ul class="nav flex-column" id="sub-listing">
+                  <li class="nav-item">
+                    <a class="nav-link btn scroller text-left" role="button" data-section="bio-container">About me</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn scroller text-left" role="button" data-section="time-line-container">Timeline</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn scroller text-left" role="button" data-section="skills-container">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn scroller text-left" role="button" data-section="jobs-container">Past work</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
