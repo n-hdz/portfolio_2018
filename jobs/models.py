@@ -12,3 +12,6 @@ class Job(models.Model):
     date = models.DateTimeField(verbose_name='date of job', null=True)
     # Link to
     link = models.URLField(verbose_name='link to project', blank=True)
+
+    def __str__(self):
+        return self.title

@@ -2,15 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
     <title>{% block title %} N.HDZ - Portfolio {% endblock title %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
     <body>
-        <div id="main">
-            Home
+
+        <nav>
+            <ul class="nav float-right" id="nav-bar">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+            </ul>
+        </nav>
+
+        <div class="jumbotron" id="banner">
+            <div class="container">
+                <h1 class="display">NHDZ</h1>
+                <p class="lead">Hi! I'm Neftalí Hernández and I'm a Full-Stack Web Developer</p>
+                <hr>
+                <p>From design to launch, let me help you make your web project a reality</p>
+                <a class="btn btn-dark btn-lg" href="#" role="button">Learn more</a>
+            </div>
         </div>
+
+        <div class="container" id="bio-container">
+            <h2 class="display">About me</h2>
+            <div id="bio">
+                <p>
+                    I'm a mexican Full-Stack Developer Developer with two years experience. I have a BFA in Graphic Design
+                    with a focus on Typography and Editorial Design and I'm currently pursuing a technical degree in
+                    Software Engineering and plan on continuing my education with a Masters in Design Thinking.
+                </p>
+                <p>
+                    A shift in my professional activity from Editorial design to Web Development, starting off as a UI/UX
+                    designer, got me gradually more involved in programming, ultimately falling in love with the
+                    Django Framework for web app development.
+                </p>
+                <p>
+                    Hired full-time for the past two years, I was offered in-house training as a Full-Stack Developer and
+                    support for continuing my education as a Software Engineer in hopes of hybridizing my Designing career with
+                    an IT approach.
+                </p>
+                <p>
+                    I'm passionate about Information Technologies and Design, Semiotics and Data Science.
+                </p>
+            </div>
+        </div>
+
+        <div class="container" id="time-line-container">
+            <h2 class="display">Timeline</h2>
+            <div class="row" id="time-line">
+                <div class="col-sm">
+                    <p>2018</p>
+                    <p>Hired at McCann Worldgroup</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>2017</p>
+                    <p>Hired at Milenio3Genera</p>
+                    <p>Enrolled A.S. in Software Engineering - Universidad Iberoamericana</p>
+                </div>
+
+                <div class="col-sm">
+                    <p>2016</p>
+                    <p>Hired at DGTIC UNAM</p>
+                    <p>Graduated B.F.A in Graphic Design - Universidad Anahuac MxNorte</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="skills-container">
+            <h2 class="display">Skills</h2>
+            <div class="row" id="skills">
+                <div class="col-sm">
+                    <p>UI/UX</p>
+                    <ul>
+                        <li>Adobe CC</li>
+                        <li>Typographic & Editorial Design</li>
+                        <li>Material Design</li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <p>Front-End</p>
+                    <ul>
+                        <li>HTML5/CSS3/Js</li>
+                        <li>Bootstrap/JQuery</li>
+                        <li>Angular/SASS</li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <p>Back-End</p>
+                    <ul>
+                        <li>Django/Python</li>
+                        <li>Ruby</li>
+                        <li>C/C++</li>
+                        <li>Java</li>
+                        <li>postgreSQL/SQLite</li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <p>Development</p>
+                    <ul>
+                        <li>GIT</li>
+                        <li>Windows/LINUX/iOS</li>
+                        <li>Webpack</li>
+                        <li>English proficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="jobs-container">
+            <h2 class="display">Past work</h2>
+            <div class="row" id="jobs">
+                {% for job in jobs.all %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{ job.image.url }}" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">{{ job.title }}</h5>
+                                  <p>{{ job.date|date:"M Y" }}</p>
+                                <p class="card-text">{{ job.summary }}</p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                              </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    <footer>
+
+    </footer>
     </body>
 </html>
