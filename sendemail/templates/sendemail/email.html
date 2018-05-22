@@ -1,0 +1,35 @@
+{% extends 'sendemail/base.html' %}
+
+{% block content%}
+
+<div class="container">
+    <div class="row" id="contact-fields">
+        <div class="col-sm-6">
+        <h1>Lets talk</h1>
+        <form method="POST">
+            <div class="form-group d-flex flex-column justify-content-between">
+                {% csrf_token %}
+                <label for="{{ form.from_email.id_for_label }}">From:</label>
+                {{ form.from_email }}
+                <label for="{{ form.from_email.id_for_label }}">About:</label>
+                {{ form.subject }}
+                <label for="{{ form.from_email.id_for_label }}">Message:</label>
+                {{ form.message }}
+                <br>
+                <div class="form-actions">
+                  <button role="button" class="btn btn-info" type="submit">Send</button>
+                </div>
+            </div>
+        </form>
+            {% if messages %}
+                <div class="alert alert-success" role="alert">
+                    {% for message in messages%}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

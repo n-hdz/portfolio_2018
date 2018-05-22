@@ -3,10 +3,10 @@
 <nav>
     <ul class="nav float-left" id="nav-bar">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="{% url 'email' %}">Contact</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Blog</a>
@@ -19,8 +19,8 @@
         <h1 class="display">N.HDZ</h1>
         <p class="lead">Hi! I'm Neftalí Hernández and I'm a Full-Stack Web Developer</p>
         <p>From design to launch, let me help you make your web project a reality</p>
-        <a class="btn btn-outline-light btn-lg scroller" role="button" data-section="bio-container"> <i class="fas fa-caret-down"></i> Read some more</a>
-        <a class="btn btn-outline-light btn-lg" role="button"> <i class="fas fa-envelope"></i> Lets talk</a>
+        <a class="btn btn-outline-dark btn-lg scroller" role="button" data-section="bio-container"> <i class="fas fa-caret-down"></i> Read some more</a>
+        <a class="btn btn-outline-dark btn-lg" role="button" href="{% url 'email' %}" style="color: #F0EBC8;"> <i class="fas fa-envelope"></i> Lets talk</a>
     </div>
 </div>
 
