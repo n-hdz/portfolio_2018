@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container pt-4 pb-4">
+        <div class="row" id="entry">
+            <div class="col-sm">
+                <img class="img-fluid" src="{{ entry.image.url }}">
+            </div>
+
+            <div class="col-sm-8">
+                <h3 class="display pt-3">{{ entry.title }}</h3>
+                <p><small>{{ entry.time_stamp }}</small></p>
+                <hr>
+                <p>{{entry.summary }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

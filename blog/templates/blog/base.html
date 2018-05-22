@@ -1,10 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} N.HDZ - Portfolio {% endblock title %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fontawesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fa-brands.css' %}">
@@ -15,19 +15,24 @@
     <script src="{% static 'script.js'%}"></script>
 </head>
     <body>
-        <nav>
-            <ul class="nav float-left" id="nav-bar">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'email' %}">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
-              </li>
-            </ul>
-        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav>
+                    <ul class="nav float-left" id="nav-bar">
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'home' %}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'email' %}">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'blogs' %}">Blog</a>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <br>
 
         {% block content %}
             <!-- Template rendering -->

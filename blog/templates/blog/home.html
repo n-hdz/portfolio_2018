@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row" id="blog-home">
+        <div class="col-sm-10">
+            <h1 class="display pt-3">My Blog</h1>
+            <h3 class="display">Latest posts:</h3>
+            <hr>
+            {% for blog in blogs %}
+            <div class="entry container pt-3 pb-3">
+                <h2 class="display pt-2">{{ blog.title }}</h2>
+                <p><small>{{ blog.date_stamp }}</small></p>
+                <div class="row">
+                    <div class="col-sm">
+                        <img class="img-fluid" src="{{ blog.image.url }}">
+                    </div>
+                    <div class="col-sm">
+                        <p>{{ blog.snippet }}</p>
+                        <a class="btn btn-info" href="{% url 'blog_detail' blog.id %}">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock%}

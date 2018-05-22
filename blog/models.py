@@ -10,3 +10,12 @@ class Blog(models.Model):
     image = models.ImageField(verbose_name="entry thumbnail", upload_to='img/blogs')
     # Blog description
     summary = models.TextField(verbose_name="entry body")
+
+    def __str__(self):
+        return self.title
+
+    def snippet(self):
+        return self.summary[:140] + '...'
+
+    def date_stamp(self):
+        return self.date.strftime('%b/%e/%Y')

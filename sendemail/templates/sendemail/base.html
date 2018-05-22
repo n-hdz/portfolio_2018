@@ -15,6 +15,24 @@
     <script src="{% static 'script.js'%}"></script>
 </head>
     <body>
+        <div class="container-fluid" id="non-banner">
+            <div class="row">
+                <nav>
+                    <ul class="nav float-left" id="nav-bar">
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'home' %}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'email' %}">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link non-banner" href="{% url 'blogs' %}">Blog</a>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <br>
         {% block content %}
             <!-- Template rendering -->
         {% endblock %}
