@@ -1,16 +1,11 @@
-"""
-WSGI config for myportfolio project.
+import os, sys
+sys.path.append('/myportfolio/myportfolio')
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+# add the virtualenv site-packages path to the sys.path
+sys.path.append('/v_myportfolio/Lib/site-packages')
 
-For more information on this file, see
-https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
-"""
-
-import os
-
+# poiting to the project settings
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myportfolio.settings")
 
 from django.core.wsgi import get_wsgi_application
-
 application = get_wsgi_application()
