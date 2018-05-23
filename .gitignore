@@ -9,7 +9,6 @@ local_settings.py
 db.sqlite3
 /media
 <django-project-name>/staticfiles/
-/static
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

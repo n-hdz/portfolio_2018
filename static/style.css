@@ -1,0 +1,106 @@
+html body {
+    background-color: #FDFDFD;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('/media/img/banner.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #F0EBC8;
+    height: 100vh;
+}
+
+#banner > btn > a {
+    color: #F0EBC8;
+}
+
+#banner > .container-fluid {
+    text-align: right;
+    vertical-align: bottom;
+    margin-top: 50vh;
+}
+
+#nav-bar > .nav-item > a.nav-link {
+    color: #F0EBC8;
+}
+
+#nav-bar > .nav-item > a.nav-link:hover {
+    color: #A5C1A3;
+}
+
+#nav-bar > .nav-item > a.nav-link.non-banner {
+    color: #408385;
+}
+
+#nav-bar > .nav-item > a.nav-link:hover {
+    color: #A5C1A3;
+}
+
+#main-content > .container {
+    margin-bottom: 5em;
+}
+
+#main-content > .container > h2 {
+    color: #408385;
+}
+
+#main-content > .container > .row > .col-sm > h4 {
+    color: #A5C1A3;
+    margin-top: 1em;
+}
+
+#jobs > .job-col > .job {
+    margin-top: 1em;
+}
+
+#sub-listing > li > a{
+    color: #39455A;
+    text-align: left;
+}
+
+#submenu > ul > li > a:hover{
+    color: #C5E2A1;
+}
+
+/* Jobs details */
+
+#job-detail {
+    height: 65vh;
+    padding: 5%
+}
+
+#job-detail > #summary > a {
+    color: #39455A;
+    text-align: left;
+}
+
+/* Contact form*/
+
+#contact-fields {
+    padding-top: 2em;
+}
+
+footer {
+    height: 15em;
+    background-color: #39455A;
+    color: #F0EBC8;
+    padding-top: 2em;
+}
+
+#contact-bar {
+    width: 6em;
+}
+
+#site-map > li > a {
+    color: #F0EBC8;
+}
+
+#site-map > li > a:hover {
+    color: #C5E2A1;
+}
